@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21A11D43F97300DE1DED /* AppDelegate.swift */; };
-		EAFE21A41D43F97300DE1DED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21A31D43F97300DE1DED /* ViewController.swift */; };
 		EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21A81D43F97300DE1DED /* Assets.xcassets */; };
 		EAFE21AC1D43F97300DE1DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */; };
 		EAFE21B71D43F97300DE1DED /* SinaWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21B61D43F97300DE1DED /* SinaWeiboTests.swift */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		EAFE219E1D43F97300DE1DED /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFE21A11D43F97300DE1DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAFE21A31D43F97300DE1DED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EAFE21A81D43F97300DE1DED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAFE21AB1D43F97300DE1DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAFE21AD1D43F97300DE1DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,17 +109,14 @@
 		EAFE21A01D43F97300DE1DED /* SinaWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				EAFE21E31D4410C600DE1DED /* Other */,
 				EAFE21DE1D43FE8100DE1DED /* Profile */,
 				EAFE21DD1D43FE7700DE1DED /* Discover */,
 				EAFE21DC1D43FE6500DE1DED /* message */,
 				EAFE21DB1D43FE5400DE1DED /* Home */,
-				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
-				EAFE21A31D43F97300DE1DED /* ViewController.swift */,
 				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
 				EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */,
 				EAFE21AD1D43F97300DE1DED /* Info.plist */,
-				EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */,
-				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
 			);
 			path = SinaWeibo;
 			sourceTree = "<group>";
@@ -176,6 +171,16 @@
 				EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		EAFE21E31D4410C600DE1DED /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
+				EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */,
+				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAFE21A41D43F97300DE1DED /* ViewController.swift in Sources */,
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
