@@ -13,20 +13,20 @@ class TJMainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //3 设置子控制器
-        let homeVc = TJHomeViewController()
-        self.addChildVC(homeVc, title: "Home", image: "tabbar_home", selectedImage: "tabbar_home_selected")
-        
-        let messageVc = TJMessageViewController()
-        self.addChildVC(messageVc, title: "Message", image: "tabbar_message_center", selectedImage: "tabbar_message_center_selected")
-        
-        let addVc = TJAddViewController()
-        self.addChildVC(addVc, title: " ", image: " ", selectedImage: " ")
-        
-        let discoverVc = TJDiscoverViewController()
-        self.addChildVC(discoverVc, title: "Discover", image: "tabbar_discover", selectedImage: "tabbar_discover_selected")
-        
-        let profileVc = TJProfileViewController()
-        self.addChildVC(profileVc, title: "Me", image: "tabbar_profile", selectedImage: "tabbar_profile_selected")
+//        let homeVc = TJHomeViewController()
+//        self.addChildVC(homeVc, title: "Home", image: "tabbar_home", selectedImage: "tabbar_home_selected")
+//        
+//        let messageVc = TJMessageViewController()
+//        self.addChildVC(messageVc, title: "Message", image: "tabbar_message_center", selectedImage: "tabbar_message_center_selected")
+//        
+//        let addVc = TJAddViewController()
+//        self.addChildVC(addVc, title: " ", image: " ", selectedImage: " ")
+//        
+//        let discoverVc = TJDiscoverViewController()
+//        self.addChildVC(discoverVc, title: "Discover", image: "tabbar_discover", selectedImage: "tabbar_discover_selected")
+//        
+//        let profileVc = TJProfileViewController()
+//        self.addChildVC(profileVc, title: "Me", image: "tabbar_profile", selectedImage: "tabbar_profile_selected")
     }
     
     
@@ -42,16 +42,16 @@ class TJMainViewController: UITabBarController {
     }
     
     
-    func addChildVC(chileVc: UIViewController, title: String, image: String, selectedImage: String){
-        //        chileVc.tabBarItem.title = title
-        //        chileVc.navigationItem.title = title
-        chileVc.title = title
-        chileVc.tabBarItem.image = UIImage(named: image)
-        chileVc.tabBarItem.selectedImage = UIImage(named: selectedImage)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        
-        let navigation = TJNavigationController(rootViewController: chileVc)
-        self.addChildViewController(navigation)
-    }
+//    func addChildVC(chileVc: UIViewController, title: String, image: String, selectedImage: String){
+//        //        chileVc.tabBarItem.title = title
+//        //        chileVc.navigationItem.title = title
+//        chileVc.title = title
+//        chileVc.tabBarItem.image = UIImage(named: image)
+//        chileVc.tabBarItem.selectedImage = UIImage(named: selectedImage)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+//        
+//        let navigation = TJNavigationController(rootViewController: chileVc)
+//        self.addChildViewController(navigation)
+//    }
     
     
     private lazy var composeButton: UIButton = {
@@ -60,7 +60,7 @@ class TJMainViewController: UITabBarController {
         btn.addTarget(self, action: #selector(TJMainViewController.composeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
-    
+
     
     @objc private func composeBtnClick(){
         print("111")
