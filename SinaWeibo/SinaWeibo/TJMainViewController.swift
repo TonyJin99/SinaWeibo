@@ -12,8 +12,6 @@ class TJMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabBar.addSubview(composeButton)
-        
         //3 设置子控制器
         let homeVc = TJHomeViewController()
         self.addChildVC(homeVc, title: "Home", image: "tabbar_home", selectedImage: "tabbar_home_selected")
@@ -31,15 +29,18 @@ class TJMainViewController: UITabBarController {
         self.addChildVC(profileVc, title: "Me", image: "tabbar_profile", selectedImage: "tabbar_profile_selected")
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
+        tabBar.addSubview(composeButton)
 
         let rect = composeButton.frame.size
         let width = tabBar.bounds.width / CGFloat(childViewControllers.count)
 
         composeButton.frame = CGRect(x: 2 * width, y: 0, width: width, height: rect.height)
     }
+    
     
     func addChildVC(chileVc: UIViewController, title: String, image: String, selectedImage: String){
         //        chileVc.tabBarItem.title = title
@@ -52,20 +53,18 @@ class TJMainViewController: UITabBarController {
         self.addChildViewController(navigation)
     }
     
-    lazy var composeButton: UIButton = {
+    
+    private lazy var composeButton: UIButton = {
 
-        let btn = UIButton()
-      
-        btn.setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
-        btn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
-      
-        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
-        btn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
-        
-        btn.sizeToFit() //调整按钮尺寸
-        
+        let btn = UIButton(imageName: "tabbar_compose_icon_add", backgroundImageName: "tabbar_compose_button")
+        btn.addTarget(self, action: #selector(TJMainViewController.composeBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
+    
+    
+    @objc private func composeBtnClick(){
+        print("111")
+    }
 
 }
 

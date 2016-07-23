@@ -21,6 +21,7 @@
 		EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */; };
 		EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */; };
 		EAFE21E51D44143000DE1DED /* TJAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21E41D44143000DE1DED /* TJAddViewController.swift */; };
+		EAFE21E81D4425CC00DE1DED /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21E71D4425CC00DE1DED /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTestViewController.swift; sourceTree = "<group>"; };
 		EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJTestViewController.xib; sourceTree = "<group>"; };
 		EAFE21E41D44143000DE1DED /* TJAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJAddViewController.swift; sourceTree = "<group>"; };
+		EAFE21E71D4425CC00DE1DED /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
 				EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */,
 				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
+				EAFE21E71D4425CC00DE1DED /* UIButton+Extension.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
+				EAFE21E81D4425CC00DE1DED /* UIButton+Extension.swift in Sources */,
 				EAFE21E51D44143000DE1DED /* TJAddViewController.swift in Sources */,
 				EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */,
 				EAFE21D01D43FB8F00DE1DED /* TJMainViewController.swift in Sources */,
