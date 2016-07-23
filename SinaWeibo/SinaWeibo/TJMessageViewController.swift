@@ -13,7 +13,7 @@ class TJMessageViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("1")
+        print("2334")
     }
 
     
