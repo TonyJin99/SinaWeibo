@@ -20,6 +20,7 @@
 		EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */; };
 		EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */; };
 		EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */; };
+		EAFE21E51D44143000DE1DED /* TJAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21E41D44143000DE1DED /* TJAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJNavigationController.swift; sourceTree = "<group>"; };
 		EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTestViewController.swift; sourceTree = "<group>"; };
 		EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJTestViewController.xib; sourceTree = "<group>"; };
+		EAFE21E41D44143000DE1DED /* TJAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				EAFE21E31D4410C600DE1DED /* Other */,
 				EAFE21DE1D43FE8100DE1DED /* Profile */,
 				EAFE21DD1D43FE7700DE1DED /* Discover */,
+				EAFE21E61D44144500DE1DED /* Add */,
 				EAFE21DC1D43FE6500DE1DED /* message */,
 				EAFE21DB1D43FE5400DE1DED /* Home */,
 				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
@@ -181,6 +184,14 @@
 				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		EAFE21E61D44144500DE1DED /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21E41D44143000DE1DED /* TJAddViewController.swift */,
+			);
+			name = Add;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +332,7 @@
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
+				EAFE21E51D44143000DE1DED /* TJAddViewController.swift in Sources */,
 				EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */,
 				EAFE21D01D43FB8F00DE1DED /* TJMainViewController.swift in Sources */,
 				EAFE21D61D43FBF900DE1DED /* TJDiscoverViewController.swift in Sources */,
