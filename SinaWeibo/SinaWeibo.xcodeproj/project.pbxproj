@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21A11D43F97300DE1DED /* AppDelegate.swift */; };
 		EAFE21A41D43F97300DE1DED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21A31D43F97300DE1DED /* ViewController.swift */; };
-		EAFE21A71D43F97300DE1DED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21A51D43F97300DE1DED /* Main.storyboard */; };
 		EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21A81D43F97300DE1DED /* Assets.xcassets */; };
 		EAFE21AC1D43F97300DE1DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */; };
 		EAFE21B71D43F97300DE1DED /* SinaWeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21B61D43F97300DE1DED /* SinaWeiboTests.swift */; };
 		EAFE21C21D43F97300DE1DED /* SinaWeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21C11D43F97300DE1DED /* SinaWeiboUITests.swift */; };
+		EAFE21D01D43FB8F00DE1DED /* TJMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */; };
+		EAFE21D21D43FBD900DE1DED /* TJHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */; };
+		EAFE21D41D43FBED00DE1DED /* TJMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D31D43FBED00DE1DED /* TJMessageViewController.swift */; };
+		EAFE21D61D43FBF900DE1DED /* TJDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */; };
+		EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */; };
+		EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,6 @@
 		EAFE219E1D43F97300DE1DED /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFE21A11D43F97300DE1DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAFE21A31D43F97300DE1DED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EAFE21A61D43F97300DE1DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAFE21A81D43F97300DE1DED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAFE21AB1D43F97300DE1DED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAFE21AD1D43F97300DE1DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		EAFE21BD1D43F97300DE1DED /* SinaWeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SinaWeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFE21C11D43F97300DE1DED /* SinaWeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaWeiboUITests.swift; sourceTree = "<group>"; };
 		EAFE21C31D43F97300DE1DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJMainViewController.swift; sourceTree = "<group>"; };
+		EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJHomeViewController.swift; sourceTree = "<group>"; };
+		EAFE21D31D43FBED00DE1DED /* TJMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJMessageViewController.swift; sourceTree = "<group>"; };
+		EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDiscoverViewController.swift; sourceTree = "<group>"; };
+		EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJProfileViewController.swift; sourceTree = "<group>"; };
+		EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +109,15 @@
 			children = (
 				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
 				EAFE21A31D43F97300DE1DED /* ViewController.swift */,
-				EAFE21A51D43F97300DE1DED /* Main.storyboard */,
 				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
 				EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */,
 				EAFE21AD1D43F97300DE1DED /* Info.plist */,
+				EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */,
+				EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */,
+				EAFE21D31D43FBED00DE1DED /* TJMessageViewController.swift */,
+				EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */,
+				EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */,
+				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
 			);
 			path = SinaWeibo;
 			sourceTree = "<group>";
@@ -187,6 +202,7 @@
 		EAFE21961D43F97300DE1DED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TJ;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Innovatis Tech";
@@ -234,7 +250,6 @@
 			files = (
 				EAFE21AC1D43F97300DE1DED /* LaunchScreen.storyboard in Resources */,
 				EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */,
-				EAFE21A71D43F97300DE1DED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFE21A41D43F97300DE1DED /* ViewController.swift in Sources */,
+				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
+				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
 				EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */,
+				EAFE21D01D43FB8F00DE1DED /* TJMainViewController.swift in Sources */,
+				EAFE21D61D43FBF900DE1DED /* TJDiscoverViewController.swift in Sources */,
+				EAFE21D41D43FBED00DE1DED /* TJMessageViewController.swift in Sources */,
+				EAFE21D21D43FBD900DE1DED /* TJHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EAFE21A51D43F97300DE1DED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EAFE21A61D43F97300DE1DED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -485,6 +498,7 @@
 				EAFE21C81D43F97300DE1DED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAFE21C91D43F97300DE1DED /* Build configuration list for PBXNativeTarget "SinaWeiboTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +507,7 @@
 				EAFE21CB1D43F97300DE1DED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAFE21CC1D43F97300DE1DED /* Build configuration list for PBXNativeTarget "SinaWeiboUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +516,7 @@
 				EAFE21CE1D43F97300DE1DED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
