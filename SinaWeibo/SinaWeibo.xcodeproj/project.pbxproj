@@ -19,6 +19,8 @@
 		EAFE21D61D43FBF900DE1DED /* TJDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */; };
 		EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */; };
 		EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */; };
+		EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */; };
+		EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJDiscoverViewController.swift; sourceTree = "<group>"; };
 		EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJProfileViewController.swift; sourceTree = "<group>"; };
 		EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJNavigationController.swift; sourceTree = "<group>"; };
+		EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJTestViewController.swift; sourceTree = "<group>"; };
+		EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,16 +111,16 @@
 		EAFE21A01D43F97300DE1DED /* SinaWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				EAFE21DE1D43FE8100DE1DED /* Profile */,
+				EAFE21DD1D43FE7700DE1DED /* Discover */,
+				EAFE21DC1D43FE6500DE1DED /* message */,
+				EAFE21DB1D43FE5400DE1DED /* Home */,
 				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
 				EAFE21A31D43F97300DE1DED /* ViewController.swift */,
 				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
 				EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */,
 				EAFE21AD1D43F97300DE1DED /* Info.plist */,
 				EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */,
-				EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */,
-				EAFE21D31D43FBED00DE1DED /* TJMessageViewController.swift */,
-				EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */,
-				EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */,
 				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
 			);
 			path = SinaWeibo;
@@ -138,6 +142,40 @@
 				EAFE21C31D43F97300DE1DED /* Info.plist */,
 			);
 			path = SinaWeiboUITests;
+			sourceTree = "<group>";
+		};
+		EAFE21DB1D43FE5400DE1DED /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		EAFE21DC1D43FE6500DE1DED /* message */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21D31D43FBED00DE1DED /* TJMessageViewController.swift */,
+				EAFE21DF1D43FEBF00DE1DED /* TJTestViewController.swift */,
+				EAFE21E01D43FEBF00DE1DED /* TJTestViewController.xib */,
+			);
+			name = message;
+			sourceTree = "<group>";
+		};
+		EAFE21DD1D43FE7700DE1DED /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */,
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		EAFE21DE1D43FE8100DE1DED /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21D71D43FC0C00DE1DED /* TJProfileViewController.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFE21AC1D43F97300DE1DED /* LaunchScreen.storyboard in Resources */,
+				EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */,
 				EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFE21A41D43F97300DE1DED /* ViewController.swift in Sources */,
+				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
 				EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */,
