@@ -13,6 +13,7 @@ class TJNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("11")
     }
     
     override func pushViewController(viewController: UIViewController, animated: Bool) {
