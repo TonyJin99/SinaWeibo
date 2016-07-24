@@ -8,7 +8,7 @@
         <!--Discover-->
         <scene sceneID="qzJ-b4-aqv">
             <objects>
-                <tableViewController id="GKE-E2-1lk" sceneMemberID="viewController">
+                <tableViewController id="GKE-E2-1lk" customClass="TJDiscoverViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="uPN-bK-qep">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

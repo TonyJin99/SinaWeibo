@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TJAddViewController: UITableViewController {
+class TJAddViewController: TJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

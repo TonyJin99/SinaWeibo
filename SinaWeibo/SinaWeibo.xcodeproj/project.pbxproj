@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA8A73151D45567300CD7F33 /* TJVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A73141D45567300CD7F33 /* TJVistorView.swift */; };
+		EA8A73171D4556A100CD7F33 /* TJVistorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8A73161D4556A100CD7F33 /* TJVistorView.xib */; };
 		EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21A11D43F97300DE1DED /* AppDelegate.swift */; };
 		EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21A81D43F97300DE1DED /* Assets.xcassets */; };
 		EAFE21AC1D43F97300DE1DED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */; };
@@ -28,6 +30,7 @@
 		EAFE21F01D442E4300DE1DED /* Null.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21EF1D442E4300DE1DED /* Null.Storyboard */; };
 		EAFE21F81D442F4C00DE1DED /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21F71D442F4C00DE1DED /* Discover.storyboard */; };
 		EAFE21FA1D442F6300DE1DED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21F91D442F6300DE1DED /* Profile.storyboard */; };
+		EAFE21FC1D4432B300DE1DED /* TJBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21FB1D4432B300DE1DED /* TJBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA8A73141D45567300CD7F33 /* TJVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJVistorView.swift; sourceTree = "<group>"; };
+		EA8A73161D4556A100CD7F33 /* TJVistorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJVistorView.xib; sourceTree = "<group>"; };
 		EAFE219E1D43F97300DE1DED /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFE21A11D43F97300DE1DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAFE21A81D43F97300DE1DED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		EAFE21EF1D442E4300DE1DED /* Null.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Null.Storyboard; sourceTree = "<group>"; };
 		EAFE21F71D442F4C00DE1DED /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		EAFE21F91D442F6300DE1DED /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		EAFE21FB1D4432B300DE1DED /* TJBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA8A73131D45562300CD7F33 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EAFE21E71D4425CC00DE1DED /* UIButton+Extension.swift */,
+				EAFE21FB1D4432B300DE1DED /* TJBaseViewController.swift */,
+				EA8A73141D45567300CD7F33 /* TJVistorView.swift */,
+				EA8A73161D4556A100CD7F33 /* TJVistorView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		EAFE21951D43F97300DE1DED = {
 			isa = PBXGroup;
 			children = (
@@ -126,15 +143,15 @@
 			isa = PBXGroup;
 			children = (
 				EAFE21E31D4410C600DE1DED /* Other */,
-				EAFE21DE1D43FE8100DE1DED /* Profile */,
-				EAFE21DD1D43FE7700DE1DED /* Discover */,
-				EAFE21E61D44144500DE1DED /* Add */,
-				EAFE21DC1D43FE6500DE1DED /* message */,
+				EA8A73131D45562300CD7F33 /* Resources */,
 				EAFE21DB1D43FE5400DE1DED /* Home */,
-				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
+				EAFE21DC1D43FE6500DE1DED /* message */,
+				EAFE21E61D44144500DE1DED /* Add */,
+				EAFE21DD1D43FE7700DE1DED /* Discover */,
+				EAFE21DE1D43FE8100DE1DED /* Profile */,
 				EAFE21AA1D43F97300DE1DED /* LaunchScreen.storyboard */,
-				EAFE21E91D442C0500DE1DED /* Main.storyboard */,
 				EAFE21AD1D43F97300DE1DED /* Info.plist */,
+				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
 			);
 			path = SinaWeibo;
 			sourceTree = "<group>";
@@ -180,8 +197,8 @@
 		EAFE21DD1D43FE7700DE1DED /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				EAFE21F71D442F4C00DE1DED /* Discover.storyboard */,
 				EAFE21D51D43FBF900DE1DED /* TJDiscoverViewController.swift */,
+				EAFE21F71D442F4C00DE1DED /* Discover.storyboard */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -201,7 +218,7 @@
 				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
 				EAFE21CF1D43FB8F00DE1DED /* TJMainViewController.swift */,
 				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
-				EAFE21E71D4425CC00DE1DED /* UIButton+Extension.swift */,
+				EAFE21E91D442C0500DE1DED /* Main.storyboard */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -332,6 +349,7 @@
 				EAFE21FA1D442F6300DE1DED /* Profile.storyboard in Resources */,
 				EAFE21EA1D442C0500DE1DED /* Main.storyboard in Resources */,
 				EAFE21F01D442E4300DE1DED /* Null.Storyboard in Resources */,
+				EA8A73171D4556A100CD7F33 /* TJVistorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +383,9 @@
 				EAFE21D01D43FB8F00DE1DED /* TJMainViewController.swift in Sources */,
 				EAFE21D61D43FBF900DE1DED /* TJDiscoverViewController.swift in Sources */,
 				EAFE21D41D43FBED00DE1DED /* TJMessageViewController.swift in Sources */,
+				EA8A73151D45567300CD7F33 /* TJVistorView.swift in Sources */,
 				EAFE21D21D43FBD900DE1DED /* TJHomeViewController.swift in Sources */,
+				EAFE21FC1D4432B300DE1DED /* TJBaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tony.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -511,6 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tony.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

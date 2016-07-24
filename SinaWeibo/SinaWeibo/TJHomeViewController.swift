@@ -7,12 +7,20 @@
 //
 
 import UIKit
-
-class TJHomeViewController: UITableViewController {
+ 
+class TJHomeViewController: TJBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !islogin{
+            vistorView?.setupVistorInfo(nil, title: "关注一些人，回这里看看有什么惊喜")
+            return
+        }
+        
+
+        
+        /*
         let friendBtn = UIButton(type: UIButtonType.Custom)
         friendBtn.addTarget(self, action: #selector(self.friendSearch), forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -30,16 +38,16 @@ class TJHomeViewController: UITableViewController {
         let sizepop = popBtn.currentBackgroundImage?.size
         popBtn.frame = CGRectMake(0, 0, (sizepop?.width)!, (sizepop?.height)!)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: popBtn)
-
+        */
        }
     
-    func friendSearch(){
-        
-    }
-    
-    func pop(){
-        
-    }
+//    func friendSearch(){
+//        
+//    }
+//    
+//    func pop(){
+//        
+//    }
 
 
 
