@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TJVistirViewDelegate: NSObjectProtocol {
+    func vistorViewWithClickRegisterBtn(vistorView: TJVistorView)
+    func vistorViewWithClickLoginBtn(vistorView: TJVistorView)
+}
+
 class TJVistorView: UIView {
 
     @IBOutlet weak var rotationImageView: UIImageView!
@@ -15,6 +20,8 @@ class TJVistorView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    
+    weak var delegate: TJVistirViewDelegate?
     
     func setupVistorInfo(imageName: String?, title: String){
         titleLabel.text = title
@@ -25,6 +32,15 @@ class TJVistorView: UIView {
         //不是首页
         rotationImageView.hidden = true
         iconImageView.image = UIImage(named: name)
+    }
+    
+    @IBAction func buttonActionRegister(sender: AnyObject) {
+        //与OC 不同，Swift中如果简单的调用代理方法，不用判断代理能否响应
+        delegate?.vistorViewWithClickRegisterBtn(self)
+    }
+    
+    @IBAction func buttonActionLogin(sender: AnyObject) {
+        delegate?.vistorViewWithClickLoginBtn(self)
     }
     
     
