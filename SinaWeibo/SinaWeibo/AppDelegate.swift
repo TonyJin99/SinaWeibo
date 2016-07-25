@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import QorumLogs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        QorumLogs.enabled = false
+        QorumLogs.test()
+        QL1("1")
         
 //        //1 创建窗口
 //        self.window = UIWindow()
