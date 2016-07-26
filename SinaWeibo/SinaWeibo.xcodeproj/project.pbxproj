@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		64189CB548200AEBDF4C11E8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797CB168E8F61EC4DAC92CD /* Pods.framework */; };
+		EA6FE6471D4675FA006E769E /* pullDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6FE6461D4675FA006E769E /* pullDown.storyboard */; };
+		EA6FE6491D46786F006E769E /* TJPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6FE6481D46786F006E769E /* TJPresentationController.swift */; };
+		EA6FE6861D47B89F006E769E /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6FE6851D47B89F006E769E /* QRCode.storyboard */; };
+		EA6FE6881D47B97E006E769E /* TJQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6FE6871D47B97E006E769E /* TJQRCodeViewController.swift */; };
 		EA8158B21D45943700B12608 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */; };
 		EA8A73151D45567300CD7F33 /* TJVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A73141D45567300CD7F33 /* TJVistorView.swift */; };
 		EA8A73171D4556A100CD7F33 /* TJVistorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8A73161D4556A100CD7F33 /* TJVistorView.xib */; };
@@ -55,6 +59,10 @@
 /* Begin PBXFileReference section */
 		485B7230809DCA531F479A15 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E265A38E9DAE8D20BBF55D7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA6FE6461D4675FA006E769E /* pullDown.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = pullDown.storyboard; sourceTree = "<group>"; };
+		EA6FE6481D46786F006E769E /* TJPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJPresentationController.swift; sourceTree = "<group>"; };
+		EA6FE6851D47B89F006E769E /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		EA6FE6871D47B97E006E769E /* TJQRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJQRCodeViewController.swift; sourceTree = "<group>"; };
 		EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		EA8A73141D45567300CD7F33 /* TJVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJVistorView.swift; sourceTree = "<group>"; };
 		EA8A73161D4556A100CD7F33 /* TJVistorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJVistorView.xib; sourceTree = "<group>"; };
@@ -130,6 +138,15 @@
 				F797CB168E8F61EC4DAC92CD /* Pods.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA6FE6841D47B874006E769E /* QR Code */ = {
+			isa = PBXGroup;
+			children = (
+				EA6FE6851D47B89F006E769E /* QRCode.storyboard */,
+				EA6FE6871D47B97E006E769E /* TJQRCodeViewController.swift */,
+			);
+			name = "QR Code";
 			sourceTree = "<group>";
 		};
 		EA8158B01D4593DF00B12608 /* Tools */ = {
@@ -211,8 +228,11 @@
 		EAFE21DB1D43FE5400DE1DED /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EA6FE6841D47B874006E769E /* QR Code */,
 				EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */,
 				EAFE21EB1D442DEB00DE1DED /* Home.storyboard */,
+				EA6FE6461D4675FA006E769E /* pullDown.storyboard */,
+				EA6FE6481D46786F006E769E /* TJPresentationController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -381,7 +401,9 @@
 				EAFE21F81D442F4C00DE1DED /* Discover.storyboard in Resources */,
 				EAFE21EC1D442DEB00DE1DED /* Home.storyboard in Resources */,
 				EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */,
+				EA6FE6471D4675FA006E769E /* pullDown.storyboard in Resources */,
 				EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */,
+				EA6FE6861D47B89F006E769E /* QRCode.storyboard in Resources */,
 				EAFE21EE1D442E1000DE1DED /* Message.storyboard in Resources */,
 				EAFE21FA1D442F6300DE1DED /* Profile.storyboard in Resources */,
 				EAFE21EA1D442C0500DE1DED /* Main.storyboard in Resources */,
@@ -461,7 +483,9 @@
 			files = (
 				EAE5B8221D45CA08006A8946 /* TitleButton.swift in Sources */,
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
+				EA6FE6881D47B97E006E769E /* TJQRCodeViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
+				EA6FE6491D46786F006E769E /* TJPresentationController.swift in Sources */,
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
 				EAFE21E81D4425CC00DE1DED /* UIButton+Extension.swift in Sources */,
 				EAFE21E51D44143000DE1DED /* TJAddViewController.swift in Sources */,

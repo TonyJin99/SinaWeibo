@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         QorumLogs.enabled = true
         
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
+        UITabBar.appearance().tintColor = UIColor.orangeColor()
         
         /*
          // 1.开启自定义LOG

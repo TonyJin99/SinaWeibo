@@ -10,27 +10,58 @@ import UIKit
 import QorumLogs
  
 class TJHomeViewController: TJBaseViewController {
+    
+    private var isPresent = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if !islogin{
             vistorView?.setupVistorInfo(nil, title: "关注一些人，回这里看看有什么惊喜")
             return
         }
     
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendsearch", target: self, action: #selector(self.buttonActionLeftBtn))
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(self.buttonActionRightBtn))
-        
-        let titleButton = TitleButton()
-        titleButton.setTitle("Tony ", forState: UIControlState.Normal)
-        titleButton.setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
-        titleButton.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
-        titleButton.sizeToFit()
+
         navigationItem.titleView = titleButton
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.btnChange), name: "present", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.btnChange), name: "dismiss", object: nil)
+        
     }
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func btnChange(){
+         titleButton.selected = !titleButton.selected
+        
+    }
+    
+    private lazy var titleButton: TitleButton = {
+        let btn = TitleButton()
+        btn.setTitle("Tony ", forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Selected)
+        btn.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
+        btn.addTarget(self, action: #selector(self.titleBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
+        btn.sizeToFit()
+        return btn
+
+    }()
+    
+    func titleBtnClick(btn: TitleButton){
+       // btn.selected = !btn.selected
+        let popview = UIStoryboard(name: "pullDown", bundle: nil).instantiateInitialViewController()
+        
+        popview?.transitioningDelegate = self
+        popview?.modalPresentationStyle = UIModalPresentationStyle.Custom
+        presentViewController(popview!, animated: true, completion: nil)
+        
+    }
+    
     
     func buttonActionLeftBtn(){
         
@@ -38,5 +69,85 @@ class TJHomeViewController: TJBaseViewController {
     
     func buttonActionRightBtn(){
         
+        let QRStoryBoard = UIStoryboard(name: "QRCode", bundle: nil).instantiateInitialViewController()
+        presentViewController(QRStoryBoard!, animated: true, completion: nil)
+        
     }
 }
+
+
+extension TJHomeViewController: UIViewControllerTransitioningDelegate{
+     //该方法用于返回一个负责转场动画的对象， 可以在该对象中控制弹出视图的尺寸
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?{
+        return TJPresentationController(presentedViewController: presented, presentingViewController: presenting)
+    }
+    
+    //该方法用于返回一个负责转场如何出现的对象
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+        isPresent = true
+        NSNotificationCenter.defaultCenter().postNotificationName("present", object: self)
+        return self
+    }
+    
+    ////该方法用于返回一个负责转场如何消失的对象
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning?{
+        isPresent = false
+        NSNotificationCenter.defaultCenter().postNotificationName("dismiss", object: self)
+        return self
+    }
+    
+}
+
+extension TJHomeViewController: UIViewControllerAnimatedTransitioning{
+    
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval{
+        return 0.5
+    }
+    
+    //专门控制modal如何出现和消失
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning){
+
+        if isPresent{
+            guard let toView = transitionContext.viewForKey(UITransitionContextToViewKey) else{
+                return
+            }
+            
+            transitionContext.containerView()?.addSubview(toView)
+            
+            toView.transform = CGAffineTransformMakeScale(1.0, 0.0)
+            toView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.0) //设置锚点
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
+                toView.transform = CGAffineTransformIdentity
+            }) { (_) in
+                transitionContext.completeTransition(true)
+            }
+        }
+        else{
+            guard let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey) else{
+                return
+            }
+            
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
+                fromView.transform = CGAffineTransformMakeScale(1.0, 0.0000001)
+            }) { (_) in
+                transitionContext.completeTransition(true)
+            }
+  
+        }
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
