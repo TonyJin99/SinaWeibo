@@ -22,7 +22,8 @@ class TJPresentationController: UIPresentationController {
     override init(presentedViewController: UIViewController, presentingViewController: UIViewController) {
         super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
     }
-
+ 
+    //布局专场动画弹出的控件
     override func containerViewWillLayoutSubviews() {
         let width = UIScreen.mainScreen().bounds.width / 3
         presentedView()?.frame = CGRect(x: width, y: 60, width: width, height: 200)

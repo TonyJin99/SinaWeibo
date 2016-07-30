@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          QLShortLine()
          */
 
-        NJLog("abc")
+       // print(TJUserAccount.loadUserAccount())
         return true
     }
 }

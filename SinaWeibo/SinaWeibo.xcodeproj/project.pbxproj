@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		64189CB548200AEBDF4C11E8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797CB168E8F61EC4DAC92CD /* Pods.framework */; };
+		EA4752B41D4D295D007201B5 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4752B31D4D295D007201B5 /* NetworkTools.swift */; };
+		EA4752B61D4D31A7007201B5 /* TJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4752B51D4D31A7007201B5 /* TJUserAccount.swift */; };
 		EA6FE6471D4675FA006E769E /* pullDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6FE6461D4675FA006E769E /* pullDown.storyboard */; };
 		EA6FE6491D46786F006E769E /* TJPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6FE6481D46786F006E769E /* TJPresentationController.swift */; };
 		EA6FE6861D47B89F006E769E /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6FE6851D47B89F006E769E /* QRCode.storyboard */; };
@@ -15,6 +17,8 @@
 		EA8158B21D45943700B12608 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */; };
 		EA8A73151D45567300CD7F33 /* TJVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A73141D45567300CD7F33 /* TJVistorView.swift */; };
 		EA8A73171D4556A100CD7F33 /* TJVistorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8A73161D4556A100CD7F33 /* TJVistorView.xib */; };
+		EACCEC161D4BE018001C4BC2 /* TJOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCEC151D4BE018001C4BC2 /* TJOAuthViewController.swift */; };
+		EACCEC181D4BE025001C4BC2 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACCEC171D4BE025001C4BC2 /* OAuth.storyboard */; };
 		EAE5B8221D45CA08006A8946 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5B8211D45CA08006A8946 /* TitleButton.swift */; };
 		EAFE21A21D43F97300DE1DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFE21A11D43F97300DE1DED /* AppDelegate.swift */; };
 		EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAFE21A81D43F97300DE1DED /* Assets.xcassets */; };
@@ -59,6 +63,8 @@
 /* Begin PBXFileReference section */
 		485B7230809DCA531F479A15 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E265A38E9DAE8D20BBF55D7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA4752B31D4D295D007201B5 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		EA4752B51D4D31A7007201B5 /* TJUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJUserAccount.swift; sourceTree = "<group>"; };
 		EA6FE6461D4675FA006E769E /* pullDown.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = pullDown.storyboard; sourceTree = "<group>"; };
 		EA6FE6481D46786F006E769E /* TJPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJPresentationController.swift; sourceTree = "<group>"; };
 		EA6FE6851D47B89F006E769E /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
@@ -66,6 +72,8 @@
 		EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		EA8A73141D45567300CD7F33 /* TJVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJVistorView.swift; sourceTree = "<group>"; };
 		EA8A73161D4556A100CD7F33 /* TJVistorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJVistorView.xib; sourceTree = "<group>"; };
+		EACCEC151D4BE018001C4BC2 /* TJOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJOAuthViewController.swift; sourceTree = "<group>"; };
+		EACCEC171D4BE025001C4BC2 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		EAE5B8211D45CA08006A8946 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		EAFE219E1D43F97300DE1DED /* SinaWeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaWeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFE21A11D43F97300DE1DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 				EAFE21E71D4425CC00DE1DED /* UIButton+Extension.swift */,
 				EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */,
 				EAE5B8211D45CA08006A8946 /* TitleButton.swift */,
+				EA4752B31D4D295D007201B5 /* NetworkTools.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -168,6 +177,16 @@
 				EA8A73161D4556A100CD7F33 /* TJVistorView.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EACCEC141D4BDFFA001C4BC2 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				EACCEC151D4BE018001C4BC2 /* TJOAuthViewController.swift */,
+				EACCEC171D4BE025001C4BC2 /* OAuth.storyboard */,
+				EA4752B51D4D31A7007201B5 /* TJUserAccount.swift */,
+			);
+			name = OAuth;
 			sourceTree = "<group>";
 		};
 		EAFE21951D43F97300DE1DED = {
@@ -195,6 +214,7 @@
 		EAFE21A01D43F97300DE1DED /* SinaWeibo */ = {
 			isa = PBXGroup;
 			children = (
+				EACCEC141D4BDFFA001C4BC2 /* OAuth */,
 				EAFE21E31D4410C600DE1DED /* Other */,
 				EA8A73131D45562300CD7F33 /* Resources */,
 				EAFE21DB1D43FE5400DE1DED /* Home */,
@@ -202,7 +222,6 @@
 				EAFE21E61D44144500DE1DED /* Add */,
 				EAFE21DD1D43FE7700DE1DED /* Discover */,
 				EAFE21DE1D43FE8100DE1DED /* Profile */,
-				EAFE21AD1D43F97300DE1DED /* Info.plist */,
 			);
 			path = SinaWeibo;
 			sourceTree = "<group>";
@@ -274,6 +293,7 @@
 				EAFE21D91D43FC3A00DE1DED /* TJNavigationController.swift */,
 				EAFE21E91D442C0500DE1DED /* Main.storyboard */,
 				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
+				EAFE21AD1D43F97300DE1DED /* Info.plist */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -402,6 +422,7 @@
 				EAFE21EC1D442DEB00DE1DED /* Home.storyboard in Resources */,
 				EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */,
 				EA6FE6471D4675FA006E769E /* pullDown.storyboard in Resources */,
+				EACCEC181D4BE025001C4BC2 /* OAuth.storyboard in Resources */,
 				EAFE21A91D43F97300DE1DED /* Assets.xcassets in Resources */,
 				EA6FE6861D47B89F006E769E /* QRCode.storyboard in Resources */,
 				EAFE21EE1D442E1000DE1DED /* Message.storyboard in Resources */,
@@ -481,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4752B61D4D31A7007201B5 /* TJUserAccount.swift in Sources */,
 				EAE5B8221D45CA08006A8946 /* TitleButton.swift in Sources */,
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EA6FE6881D47B97E006E769E /* TJQRCodeViewController.swift in Sources */,
@@ -494,6 +516,8 @@
 				EAFE21D61D43FBF900DE1DED /* TJDiscoverViewController.swift in Sources */,
 				EAFE21D41D43FBED00DE1DED /* TJMessageViewController.swift in Sources */,
 				EA8A73151D45567300CD7F33 /* TJVistorView.swift in Sources */,
+				EACCEC161D4BE018001C4BC2 /* TJOAuthViewController.swift in Sources */,
+				EA4752B41D4D295D007201B5 /* NetworkTools.swift in Sources */,
 				EAFE21D21D43FBD900DE1DED /* TJHomeViewController.swift in Sources */,
 				EAFE21FC1D4432B300DE1DED /* TJBaseViewController.swift in Sources */,
 				EA8158B21D45943700B12608 /* UIBarButtonItem+Extension.swift in Sources */,
@@ -621,11 +645,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tony.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -635,11 +662,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SinaWeibo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tony.SinaWeibo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

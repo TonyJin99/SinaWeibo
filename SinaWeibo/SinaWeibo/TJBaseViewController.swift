@@ -10,7 +10,7 @@ import UIKit
 
 class TJBaseViewController: UITableViewController {
 
-    var islogin = true
+    var islogin = TJUserAccount.isLogin()
     var vistorView: TJVistorView? //访客视图
     
     override func loadView() {
@@ -24,14 +24,20 @@ class TJBaseViewController: UITableViewController {
         
         vistorView?.delegate = self
         
+        vistorView?.loginButton.addTarget(self, action: #selector(self.clickLoginBtn), forControlEvents: UIControlEvents.TouchUpInside)
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.clickRegisterBtn))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(self.clickLoginBtn))
     }
     
-    func clickRegisterBtn(){
+    func clickRegisterBtn(btn: UIButton){
+        
+        
     }
     
     func clickLoginBtn(){
+        let sb = UIStoryboard(name: "OAuth", bundle: nil).instantiateInitialViewController()
+        presentViewController(sb!, animated: true, completion: nil)
         
     }
 

@@ -20,7 +20,6 @@ class TJHomeViewController: TJBaseViewController {
             vistorView?.setupVistorInfo(nil, title: "关注一些人，回这里看看有什么惊喜")
             return
         }
-    
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendsearch", target: self, action: #selector(self.buttonActionLeftBtn))
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(self.buttonActionRightBtn))
 
@@ -28,7 +27,6 @@ class TJHomeViewController: TJBaseViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.btnChange), name: "present", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.btnChange), name: "dismiss", object: nil)
-        
     }
     
     deinit{
@@ -37,7 +35,6 @@ class TJHomeViewController: TJBaseViewController {
     
     func btnChange(){
          titleButton.selected = !titleButton.selected
-        
     }
     
     private lazy var titleButton: TitleButton = {
@@ -59,7 +56,6 @@ class TJHomeViewController: TJBaseViewController {
         popview?.transitioningDelegate = self
         popview?.modalPresentationStyle = UIModalPresentationStyle.Custom
         presentViewController(popview!, animated: true, completion: nil)
-        
     }
     
     
@@ -68,10 +64,8 @@ class TJHomeViewController: TJBaseViewController {
     }
     
     func buttonActionRightBtn(){
-        
         let QRStoryBoard = UIStoryboard(name: "QRCode", bundle: nil).instantiateInitialViewController()
         presentViewController(QRStoryBoard!, animated: true, completion: nil)
-        
     }
 }
 
