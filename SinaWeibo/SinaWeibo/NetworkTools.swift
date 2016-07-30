@@ -15,7 +15,8 @@ class NetworkTools: AFHTTPSessionManager {
         let baseURL = NSURL(string: "https://api.weibo.com/")!
         let instance = NetworkTools(baseURL: baseURL, sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         
-        instance.responseSerializer.acceptableContentTypes = (NSSet(object: "text/plain") as! Set)
+        instance.responseSerializer.acceptableContentTypes = (NSSet(objects: "application/json", "text/json", "text/javascript", "text/plain") as! Set)
+        
         return instance
     }()
 }

@@ -3,3 +3,5 @@ use_frameworks!
 
 pod 'QorumLogs'
 pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'SDWebImage'

@@ -22,6 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
         
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        window?.backgroundColor = UIColor.whiteColor()
+//
+//        let sb = UIStoryboard(name: "Welcome", bundle: nil)
+//        let vc = sb.instantiateInitialViewController()!
+//        window?.rootViewController = vc
+//        window?.makeKeyAndVisible()
+        
         /*
          // 1.开启自定义LOG
          QorumLogs.enabled = true

@@ -39,7 +39,8 @@ class TJHomeViewController: TJBaseViewController {
     
     private lazy var titleButton: TitleButton = {
         let btn = TitleButton()
-        btn.setTitle("Tony ", forState: UIControlState.Normal)
+        let title = TJUserAccount.loadUserAccount()?.screen_name
+        btn.setTitle(title, forState: UIControlState.Normal)
         btn.setImage(UIImage(named: "navigationbar_arrow_down"), forState: UIControlState.Normal)
         btn.setImage(UIImage(named: "navigationbar_arrow_up"), forState: UIControlState.Selected)
         btn.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)

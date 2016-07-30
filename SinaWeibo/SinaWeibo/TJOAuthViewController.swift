@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class TJOAuthViewController: UIViewController {
 
@@ -26,6 +27,18 @@ class TJOAuthViewController: UIViewController {
 }
 
 extension TJOAuthViewController: UIWebViewDelegate{
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        SVProgressHUD.showInfoWithStatus("正在加载中...")
+        SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+    
+    
+    
     //该方法每次请求都会调用， 返回false表示不允许请求， 返回true代表允许请求
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool{
         //print(request)
@@ -70,7 +83,10 @@ extension TJOAuthViewController: UIWebViewDelegate{
                  }
                  */
                 let account = TJUserAccount(dict: dict as! [String: AnyObject])
-                print(account.saveAccount())
+                account.loadUserInfo({ (account, error) in
+                    account?.saveAccount()
+                })
+                
         }) { (task: NSURLSessionDataTask?, error: NSError) in
                 print(error)
         }

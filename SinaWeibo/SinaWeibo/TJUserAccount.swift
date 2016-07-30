@@ -17,6 +17,8 @@ class TJUserAccount: NSObject, NSCoding{
     }
     var expires_date: NSDate?
     var uid: String?
+    var avatar_large: String? //用户头像
+    var screen_name: String? //用户昵称
     
     init(dict: [String: AnyObject]) {
         //字典的keyvalue必须和模型一一对应
@@ -52,7 +54,6 @@ class TJUserAccount: NSObject, NSCoding{
     
     // 解归档模型
     class func loadUserAccount() -> TJUserAccount?{
-        print("1")
         // 1.判断是否已经加载过了
         if TJUserAccount.account != nil{
             NJLog("已经有加载过")
@@ -71,25 +72,36 @@ class TJUserAccount: NSObject, NSCoding{
         }
         
         //3检验是否过期
-//        guard let date = account.expires_date else{
-//            return nil
-//        }
 //        print("过期时间：\(account.expires_date)")
 //        print(NSDate())
-//
-//        if date.compare(NSDate()) == NSComparisonResult.OrderedAscending{
-//            print("过期了")
-//            return nil
-//        }
         guard let date = account.expires_date where date.compare(NSDate()) != NSComparisonResult.OrderedAscending  else
         {
             print("过期了")
             return nil
         }
 
-        
         TJUserAccount.account = account
         return TJUserAccount.account
+    }
+    
+    func loadUserInfo(finished: (account: TJUserAccount?, error: NSError?)->()){
+        assert(access_token != nil, "先授权")
+        let path = "2/users/show.json"
+        let paras = ["access_token": access_token!, "uid": uid!]
+        NetworkTools.sharedInstance.GET(path, parameters: paras, progress: { (progress: NSProgress) in
+            print(progress)
+            }, success: { (datatask: NSURLSessionDataTask, objc: AnyObject?) in
+                let dict = objc as! [String: AnyObject]
+                self.screen_name = dict["screen_name"] as? String
+                self.avatar_large = dict["avatar_large"] as? String
+                //self.saveAccount()
+                finished(account: self, error: nil)
+        }) { (datatask: NSURLSessionDataTask?, error: NSError) in
+                print(error)
+            finished(account: nil, error: error)
+            
+        }
+        
     }
     
  
@@ -104,6 +116,8 @@ class TJUserAccount: NSObject, NSCoding{
         aCoder.encodeInteger(expires_in, forKey: "expires_in")
         aCoder.encodeObject(uid, forKey: "uid")
         aCoder.encodeObject(expires_date, forKey: "expires_date")
+        aCoder.encodeObject(screen_name, forKey: "screen_name")
+        aCoder.encodeObject(avatar_large, forKey: "avatar_large")
     }
     
     required init?(coder aDecoder: NSCoder){
@@ -111,6 +125,8 @@ class TJUserAccount: NSObject, NSCoding{
         self.expires_in = aDecoder.decodeIntegerForKey("expires_in") as Int
         self.uid = aDecoder.decodeObjectForKey("uid") as? String
         self.expires_date = aDecoder.decodeObjectForKey("expires_date") as? NSDate
+        self.screen_name = aDecoder.decodeObjectForKey("screen_name") as? String
+        self.avatar_large = aDecoder.decodeObjectForKey("avatar_large") as? String
     }
 
 }
