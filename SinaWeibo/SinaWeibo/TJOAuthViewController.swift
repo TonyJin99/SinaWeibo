@@ -74,17 +74,12 @@ extension TJOAuthViewController: UIWebViewDelegate{
         NetworkTools.sharedInstance.POST(path, parameters: paras, progress: { (progress: NSProgress) in
             print(progress)
             }, success: { (task: NSURLSessionDataTask, dict: AnyObject?) in
-                /*
-                 {
-                 "access_token" = "2.00pFZdLC25bUWE6b1e1f2b940lv3Oc";
-                 "expires_in" = 157679999;
-                 "remind_in" = 157679999;
-                 uid = 2004235053;
-                 }
-                 */
+
                 let account = TJUserAccount(dict: dict as! [String: AnyObject])
                 account.loadUserInfo({ (account, error) in
                     account?.saveAccount()
+                    let view = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()
+                    UIApplication.sharedApplication().keyWindow?.rootViewController = view
                 })
                 
         }) { (task: NSURLSessionDataTask?, error: NSError) in

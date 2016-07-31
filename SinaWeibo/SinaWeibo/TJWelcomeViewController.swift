@@ -38,7 +38,8 @@ class TJWelcomeViewController: UIViewController {
             UIView.animateWithDuration(2.0, animations: { () -> Void in
                 self.textLabel.alpha = 1.0
                 }, completion: { (_) -> Void in
-                    NJLog("")
+                    let view = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                    UIApplication.sharedApplication().keyWindow?.rootViewController = view
             })
         }
 

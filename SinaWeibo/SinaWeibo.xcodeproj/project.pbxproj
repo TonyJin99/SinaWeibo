@@ -12,6 +12,8 @@
 		EA4752B61D4D31A7007201B5 /* TJUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4752B51D4D31A7007201B5 /* TJUserAccount.swift */; };
 		EA4752B91D4D67C7007201B5 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4752B81D4D67C7007201B5 /* Welcome.storyboard */; };
 		EA4752BB1D4D6890007201B5 /* TJWelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4752BA1D4D6890007201B5 /* TJWelcomeViewController.swift */; };
+		EA4752BD1D4E7E79007201B5 /* TJNewFeature.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4752BC1D4E7E79007201B5 /* TJNewFeature.storyboard */; };
+		EA4752BF1D4E7E91007201B5 /* TJNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4752BE1D4E7E91007201B5 /* TJNewFeatureViewController.swift */; };
 		EA6FE6471D4675FA006E769E /* pullDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6FE6461D4675FA006E769E /* pullDown.storyboard */; };
 		EA6FE6491D46786F006E769E /* TJPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6FE6481D46786F006E769E /* TJPresentationController.swift */; };
 		EA6FE6861D47B89F006E769E /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6FE6851D47B89F006E769E /* QRCode.storyboard */; };
@@ -69,6 +71,8 @@
 		EA4752B51D4D31A7007201B5 /* TJUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJUserAccount.swift; sourceTree = "<group>"; };
 		EA4752B81D4D67C7007201B5 /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		EA4752BA1D4D6890007201B5 /* TJWelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJWelcomeViewController.swift; sourceTree = "<group>"; };
+		EA4752BC1D4E7E79007201B5 /* TJNewFeature.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TJNewFeature.storyboard; sourceTree = "<group>"; };
+		EA4752BE1D4E7E91007201B5 /* TJNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJNewFeatureViewController.swift; sourceTree = "<group>"; };
 		EA6FE6461D4675FA006E769E /* pullDown.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = pullDown.storyboard; sourceTree = "<group>"; };
 		EA6FE6481D46786F006E769E /* TJPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJPresentationController.swift; sourceTree = "<group>"; };
 		EA6FE6851D47B89F006E769E /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				EA4752B81D4D67C7007201B5 /* Welcome.storyboard */,
 				EA4752BA1D4D6890007201B5 /* TJWelcomeViewController.swift */,
+				EA4752BC1D4E7E79007201B5 /* TJNewFeature.storyboard */,
+				EA4752BE1D4E7E91007201B5 /* TJNewFeatureViewController.swift */,
 			);
 			name = Features;
 			sourceTree = "<group>";
@@ -229,9 +235,9 @@
 			children = (
 				EAFE21A11D43F97300DE1DED /* AppDelegate.swift */,
 				EAFE21A81D43F97300DE1DED /* Assets.xcassets */,
+				EAFE21E31D4410C600DE1DED /* Other */,
 				EA4752B71D4D67B1007201B5 /* Features */,
 				EACCEC141D4BDFFA001C4BC2 /* OAuth */,
-				EAFE21E31D4410C600DE1DED /* Other */,
 				EA8A73131D45562300CD7F33 /* Resources */,
 				EAFE21DB1D43FE5400DE1DED /* Home */,
 				EAFE21DC1D43FE6500DE1DED /* message */,
@@ -432,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4752BD1D4E7E79007201B5 /* TJNewFeature.storyboard in Resources */,
 				EAFE21F81D442F4C00DE1DED /* Discover.storyboard in Resources */,
 				EAFE21EC1D442DEB00DE1DED /* Home.storyboard in Resources */,
 				EAFE21E21D43FEBF00DE1DED /* TJTestViewController.xib in Resources */,
@@ -522,6 +529,7 @@
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EA6FE6881D47B97E006E769E /* TJQRCodeViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
+				EA4752BF1D4E7E91007201B5 /* TJNewFeatureViewController.swift in Sources */,
 				EA6FE6491D46786F006E769E /* TJPresentationController.swift in Sources */,
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
 				EAFE21E81D4425CC00DE1DED /* UIButton+Extension.swift in Sources */,

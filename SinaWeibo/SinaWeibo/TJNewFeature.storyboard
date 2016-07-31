@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cp1-YD-IFy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--New Feature View Controller-->
+        <scene sceneID="ZF7-34-o47">
+            <objects>
+                <viewController id="cp1-YD-IFy" customClass="TJNewFeatureViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kXM-LO-YHQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zqo-Ty-lZL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gPa-Ny-lED">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Ln-q1-jpX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.12189122289419174" green="0.16572332382202148" blue="0.94137567281723022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Mc0-VB-Tjx" customClass="TJNewFeatureLayOut" customModule="SinaWeibo" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tony" id="JLm-PI-4Bt" customClass="TJNewFeatureCell" customModule="SinaWeibo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cp1-YD-IFy" id="073-J4-3vf"/>
+                                    <outlet property="delegate" destination="cp1-YD-IFy" id="cCy-jQ-wQp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3Ln-q1-jpX" secondAttribute="trailing" id="Mti-S6-Buj"/>
+                            <constraint firstItem="3Ln-q1-jpX" firstAttribute="leading" secondItem="gPa-Ny-lED" secondAttribute="leading" id="QsF-nu-jkQ"/>
+                            <constraint firstItem="3Ln-q1-jpX" firstAttribute="top" secondItem="gPa-Ny-lED" secondAttribute="top" id="s6w-qm-HZa"/>
+                            <constraint firstItem="3Ln-q1-jpX" firstAttribute="bottom" secondItem="Zqo-Ty-lZL" secondAttribute="top" id="tTE-Fc-eDb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRK-My-MCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="369"/>
+        </scene>
+    </scenes>
+</document>

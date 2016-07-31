@@ -17,18 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        //print(NSHomeDirectory())
         QorumLogs.enabled = true
         
         UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         UITabBar.appearance().tintColor = UIColor.orangeColor()
         
-//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        window?.backgroundColor = UIColor.whiteColor()
-//
-//        let sb = UIStoryboard(name: "Welcome", bundle: nil)
-//        let vc = sb.instantiateInitialViewController()!
-//        window?.rootViewController = vc
-//        window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
+
+        window?.rootViewController = defaultViewController()
+        window?.makeKeyAndVisible()
+        isNewVersion()
         
         /*
          // 1.开启自定义LOG
@@ -54,6 +54,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
        // print(TJUserAccount.loadUserAccount())
         return true
+    }
+}
+
+
+extension AppDelegate{
+    
+    private func defaultViewController() -> UIViewController{
+        
+        if TJUserAccount.isLogin(){
+            if isNewVersion() {
+                let view = UIStoryboard(name: "TJNewFeature", bundle: nil).instantiateInitialViewController()!
+                return view
+            }
+            else{
+                let view = UIStoryboard(name: "Welcome", bundle: nil).instantiateInitialViewController()!
+                return view
+            }
+        }
+        
+        return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+    }
+  
+    private func isNewVersion() -> Bool{
+       
+        let currentVersion = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let sanboxVersion = (defaults.objectForKey("CFBundleShortVersionString") as? String) ?? "0.0"
+ 
+        if currentVersion.compare(sanboxVersion) == NSComparisonResult.OrderedDescending{
+
+            defaults.setObject(currentVersion, forKey: "CFBundleShortVersionString")
+            defaults.synchronize() // iOS7以前需要写, iOS7以后不用写
+            return true
+        }
+        NJLog("没有新版本")
+        return false
     }
 }
 

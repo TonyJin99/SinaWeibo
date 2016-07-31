@@ -18,15 +18,20 @@ extension UIButton{
      一般情况下如果想给系统的类提供一个快速创建的方法, 就自定义一个便利构造方法
      */
 
-    convenience init(imageName: String, backgroundImageName: String){
+    convenience init(imageName: String?, backgroundImageName: String?){
         
         self.init()
-        setImage(UIImage(named: "tabbar_compose_icon_add"), forState: UIControlState.Normal)
-        setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), forState: UIControlState.Highlighted)
-        
-        setBackgroundImage(UIImage(named: "tabbar_compose_button"), forState: UIControlState.Normal)
-        setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), forState: UIControlState.Highlighted)
-        
+        if let name = imageName{
+            // 2.设置前景图片
+            setImage(UIImage(named: name), forState: UIControlState.Normal)
+            setImage(UIImage(named: name + "_highlighted"), forState: UIControlState.Highlighted)
+        }
+        if let backgroundName = backgroundImageName{
+            // 3.设置背景图片
+            setBackgroundImage(UIImage(named: backgroundName), forState: UIControlState.Normal)
+            setBackgroundImage(UIImage(named: backgroundName + "_highlighted"), forState: UIControlState.Highlighted)
+        }
+
         sizeToFit() //调整按钮尺寸
 
     }
