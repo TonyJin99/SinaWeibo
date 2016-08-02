@@ -9,7 +9,7 @@
         <scene sceneID="RjS-6M-yOE">
             <objects>
                 <tabBarController id="J9n-9g-5tP" customClass="TJMainViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qzk-1b-Bpd">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Qzk-1b-Bpd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

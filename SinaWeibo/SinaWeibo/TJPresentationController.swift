@@ -25,8 +25,8 @@ class TJPresentationController: UIPresentationController {
  
     //布局专场动画弹出的控件
     override func containerViewWillLayoutSubviews() {
-        let width = UIScreen.mainScreen().bounds.width / 3
-        presentedView()?.frame = CGRect(x: width, y: 60, width: width, height: 200)
+        let width = UIScreen.mainScreen().bounds.width / 2
+        presentedView()?.frame = CGRect(x: width/2, y: 60, width: width, height: 200)
         
         containerView?.insertSubview(coverBtn, atIndex: 0)
         coverBtn.addTarget(self, action: #selector(self.coverBtnClick), forControlEvents: UIControlEvents.TouchUpInside)

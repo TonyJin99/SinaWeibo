@@ -8,8 +8,15 @@
 
 import UIKit
 import QorumLogs
+import SVProgressHUD
  
 class TJHomeViewController: TJBaseViewController {
+    
+    var statuses: [TJStatus]?{
+        didSet{
+            tableView.reloadData()
+        }
+    }
     
     private var isPresent = false
 
@@ -27,6 +34,13 @@ class TJHomeViewController: TJBaseViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.btnChange), name: "present", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.btnChange), name: "dismiss", object: nil)
+        
+        loadingData()
+        
+        
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     deinit{
@@ -36,6 +50,23 @@ class TJHomeViewController: TJBaseViewController {
     func btnChange(){
          titleButton.selected = !titleButton.selected
     }
+    
+    func loadingData(){
+        NetworkTools.sharedInstance.loadStatus { (array, error) in
+            if error != nil{
+                SVProgressHUD.showErrorWithStatus("没有获取到数据")
+                SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
+            }
+            //字典转模型
+            var models = [TJStatus]()
+            for dict in array!{
+                let status = TJStatus(dict: dict)
+                models.append(status)
+            }
+            self.statuses = models
+        }
+    }
+    
     
     private lazy var titleButton: TitleButton = {
         let btn = TitleButton()
@@ -133,6 +164,35 @@ extension TJHomeViewController: UIViewControllerAnimatedTransitioning{
     }
     
 }
+
+extension TJHomeViewController{
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.statuses?.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Home", forIndexPath: indexPath) as! TJHomeTableViewCell
+        
+        cell.status = statuses![indexPath.row]
+        
+        return cell
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

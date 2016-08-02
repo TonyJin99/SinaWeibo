@@ -48,20 +48,20 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="oY6-L7-FYj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="1IB-MU-EN9"/>
+                <constraint firstItem="oY6-L7-FYj" firstAttribute="top" secondItem="1R4-c8-K08" secondAttribute="bottom" constant="8" symbolic="YES" id="2qr-zs-UPG"/>
                 <constraint firstAttribute="trailing" secondItem="TYw-pa-dqK" secondAttribute="trailing" constant="72" id="3uw-a2-31q"/>
                 <constraint firstItem="TYw-pa-dqK" firstAttribute="leading" secondItem="nqY-ns-lW6" secondAttribute="trailing" constant="55" id="9Ik-bs-7vD"/>
                 <constraint firstItem="TYw-pa-dqK" firstAttribute="width" secondItem="nqY-ns-lW6" secondAttribute="width" id="9e8-hD-JGR"/>
-                <constraint firstItem="1R4-c8-K08" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="A7F-2Q-JsX"/>
+                <constraint firstItem="1R4-c8-K08" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CM3-Fi-SKi"/>
                 <constraint firstItem="lUZ-c4-03z" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="DHi-JV-O6e"/>
                 <constraint firstItem="TYw-pa-dqK" firstAttribute="leading" secondItem="nqY-ns-lW6" secondAttribute="trailing" constant="55" id="H0O-B9-T4h"/>
                 <constraint firstItem="lUZ-c4-03z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="I4j-A4-B6p"/>
                 <constraint firstItem="TYw-pa-dqK" firstAttribute="height" secondItem="nqY-ns-lW6" secondAttribute="height" id="L0O-xP-Tqa"/>
                 <constraint firstAttribute="trailing" secondItem="oY6-L7-FYj" secondAttribute="trailing" constant="45" id="Lff-UW-P90"/>
+                <constraint firstItem="1R4-c8-K08" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MXh-Ie-Kqu"/>
                 <constraint firstItem="nqY-ns-lW6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="73" id="YT8-nj-MnN"/>
                 <constraint firstItem="nqY-ns-lW6" firstAttribute="top" secondItem="oY6-L7-FYj" secondAttribute="bottom" constant="18" id="YXY-qW-2dB"/>
                 <constraint firstItem="TYw-pa-dqK" firstAttribute="top" secondItem="oY6-L7-FYj" secondAttribute="bottom" constant="18" id="Z81-0E-Xle"/>
-                <constraint firstItem="1R4-c8-K08" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="srF-sI-Ah8"/>
-                <constraint firstItem="oY6-L7-FYj" firstAttribute="top" secondItem="1R4-c8-K08" secondAttribute="bottom" constant="8" id="tJn-D6-obR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
