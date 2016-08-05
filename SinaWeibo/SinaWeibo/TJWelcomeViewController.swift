@@ -14,6 +14,7 @@ class TJWelcomeViewController: UIViewController {
     @IBOutlet weak var buttomCons: NSLayoutConstraint!
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,8 +43,6 @@ class TJWelcomeViewController: UIViewController {
                     UIApplication.sharedApplication().keyWindow?.rootViewController = view
             })
         }
-
-        
     }
 
 }

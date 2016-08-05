@@ -9,10 +9,11 @@
 import UIKit
 import QorumLogs
 import SVProgressHUD
+import SDWebImage
  
 class TJHomeViewController: TJBaseViewController {
     
-    var statuses: [TJStatus]?{
+    var statuses: [TJStatusViewModel]?{
         didSet{
             tableView.reloadData()
         }
@@ -38,7 +39,7 @@ class TJHomeViewController: TJBaseViewController {
         loadingData()
         
         
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 400
         tableView.rowHeight = UITableViewAutomaticDimension
         
     }
@@ -58,12 +59,39 @@ class TJHomeViewController: TJBaseViewController {
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
             }
             //字典转模型
-            var models = [TJStatus]()
+            var models = [TJStatusViewModel]()
             for dict in array!{
                 let status = TJStatus(dict: dict)
-                models.append(status)
+                let viewModel = TJStatusViewModel(status: status)
+                models.append(viewModel)
             }
-            self.statuses = models
+            
+            //缓存微博所有配图
+            self.cachesImages(models)
+        }
+    }
+    
+    private func cachesImages(viewModels: [TJStatusViewModel]){
+        let group = dispatch_group_create()
+        
+        for viewModel in viewModels{
+            guard let picurls = viewModel.thumbnail_pic else{
+                return
+            }
+
+            for url in picurls{
+                dispatch_group_enter(group)
+                
+                SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (image, error, _, _, _) in
+                    print("图片下载完成")
+                    dispatch_group_leave(group)
+                })
+            }
+        }
+
+        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
+            print("全部下载完成")
+            self.statuses = viewModels
         }
     }
     
@@ -158,14 +186,13 @@ extension TJHomeViewController: UIViewControllerAnimatedTransitioning{
             }) { (_) in
                 transitionContext.completeTransition(true)
             }
-  
         }
-        
     }
     
 }
 
 extension TJHomeViewController{
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.statuses?.count ?? 0
     }
@@ -173,7 +200,7 @@ extension TJHomeViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Home", forIndexPath: indexPath) as! TJHomeTableViewCell
         
-        cell.status = statuses![indexPath.row]
+        cell.viewModel = statuses![indexPath.row]
         
         return cell
     }

@@ -9,11 +9,14 @@
 import UIKit
 
 class TJStatus: NSObject{
+    
+
     var created_at: String? //微博创建时间
     var idstr: String? //字符串型的微博ID
     var text: String? //微博信息内容
     var source: String? //微博来源
-    var user: TJUser?
+    var user: TJUser? //微博作者的用户信息
+    var pic_urls: [[String: AnyObject]]? //配图数组
     
     init(dict: [String: AnyObject]) {
         super.init()

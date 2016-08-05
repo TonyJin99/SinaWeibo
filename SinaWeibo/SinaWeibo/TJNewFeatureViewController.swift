@@ -17,9 +17,8 @@ class TJNewFeatureViewController: UIViewController {
         super.viewDidLoad()
     
     }
-
-
 }
+
 
 extension TJNewFeatureViewController: UICollectionViewDelegate{
     
@@ -127,18 +126,4 @@ class TJNewFeatureLayOut: UICollectionViewFlowLayout{
         
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

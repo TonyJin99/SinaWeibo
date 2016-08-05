@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64189CB548200AEBDF4C11E8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F797CB168E8F61EC4DAC92CD /* Pods.framework */; };
+		EA0A648D1D539B3C00CE4F6C /* TJStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0A648C1D539B3C00CE4F6C /* TJStatusViewModel.swift */; };
 		EA2558641D51296F005FF1C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2558631D51296F005FF1C7 /* Assets.xcassets */; };
 		EA274C091D4F9FAF00073276 /* TJStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA274C081D4F9FAF00073276 /* TJStatus.swift */; };
 		EA274C0B1D4FBD6400073276 /* TJUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA274C0A1D4FBD6400073276 /* TJUser.swift */; };
@@ -25,6 +26,7 @@
 		EA8158B21D45943700B12608 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */; };
 		EA8A73151D45567300CD7F33 /* TJVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A73141D45567300CD7F33 /* TJVistorView.swift */; };
 		EA8A73171D4556A100CD7F33 /* TJVistorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8A73161D4556A100CD7F33 /* TJVistorView.xib */; };
+		EABC05C71D550FD800070582 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC05C61D550FD800070582 /* NSDate+Extension.swift */; };
 		EACCEC161D4BE018001C4BC2 /* TJOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACCEC151D4BE018001C4BC2 /* TJOAuthViewController.swift */; };
 		EACCEC181D4BE025001C4BC2 /* OAuth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACCEC171D4BE025001C4BC2 /* OAuth.storyboard */; };
 		EAE5B8221D45CA08006A8946 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE5B8211D45CA08006A8946 /* TitleButton.swift */; };
@@ -70,6 +72,7 @@
 /* Begin PBXFileReference section */
 		485B7230809DCA531F479A15 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E265A38E9DAE8D20BBF55D7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		EA0A648C1D539B3C00CE4F6C /* TJStatusViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJStatusViewModel.swift; sourceTree = "<group>"; };
 		EA2558631D51296F005FF1C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA274C081D4F9FAF00073276 /* TJStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJStatus.swift; sourceTree = "<group>"; };
 		EA274C0A1D4FBD6400073276 /* TJUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJUser.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		EA8A73141D45567300CD7F33 /* TJVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJVistorView.swift; sourceTree = "<group>"; };
 		EA8A73161D4556A100CD7F33 /* TJVistorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TJVistorView.xib; sourceTree = "<group>"; };
+		EABC05C61D550FD800070582 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		EACCEC151D4BE018001C4BC2 /* TJOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJOAuthViewController.swift; sourceTree = "<group>"; };
 		EACCEC171D4BE025001C4BC2 /* OAuth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OAuth.storyboard; sourceTree = "<group>"; };
 		EAE5B8211D45CA08006A8946 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 				EA8158B11D45943700B12608 /* UIBarButtonItem+Extension.swift */,
 				EAE5B8211D45CA08006A8946 /* TitleButton.swift */,
 				EA4752B31D4D295D007201B5 /* NetworkTools.swift */,
+				EABC05C61D550FD800070582 /* NSDate+Extension.swift */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -202,6 +207,15 @@
 				EA8A73161D4556A100CD7F33 /* TJVistorView.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		EABC05C81D551CDD00070582 /* PullDown */ = {
+			isa = PBXGroup;
+			children = (
+				EA6FE6461D4675FA006E769E /* pullDown.storyboard */,
+				EA6FE6481D46786F006E769E /* TJPresentationController.swift */,
+			);
+			name = PullDown;
 			sourceTree = "<group>";
 		};
 		EACCEC141D4BDFFA001C4BC2 /* OAuth */ = {
@@ -275,13 +289,13 @@
 		EAFE21DB1D43FE5400DE1DED /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EABC05C81D551CDD00070582 /* PullDown */,
 				EA6FE6841D47B874006E769E /* QR Code */,
-				EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */,
 				EAFE21EB1D442DEB00DE1DED /* Home.storyboard */,
-				EA6FE6461D4675FA006E769E /* pullDown.storyboard */,
-				EA6FE6481D46786F006E769E /* TJPresentationController.swift */,
+				EAFE21D11D43FBD900DE1DED /* TJHomeViewController.swift */,
 				EA274C081D4F9FAF00073276 /* TJStatus.swift */,
 				EA274C0A1D4FBD6400073276 /* TJUser.swift */,
+				EA0A648C1D539B3C00CE4F6C /* TJStatusViewModel.swift */,
 				EA274C0C1D4FDD0C00073276 /* TJHomeTableViewCell.swift */,
 			);
 			name = Home;
@@ -535,6 +549,7 @@
 			files = (
 				EA4752B61D4D31A7007201B5 /* TJUserAccount.swift in Sources */,
 				EAE5B8221D45CA08006A8946 /* TitleButton.swift in Sources */,
+				EA0A648D1D539B3C00CE4F6C /* TJStatusViewModel.swift in Sources */,
 				EAFE21E11D43FEBF00DE1DED /* TJTestViewController.swift in Sources */,
 				EA6FE6881D47B97E006E769E /* TJQRCodeViewController.swift in Sources */,
 				EAFE21DA1D43FC3A00DE1DED /* TJNavigationController.swift in Sources */,
@@ -544,6 +559,7 @@
 				EAFE21D81D43FC0C00DE1DED /* TJProfileViewController.swift in Sources */,
 				EA274C0B1D4FBD6400073276 /* TJUser.swift in Sources */,
 				EAFE21E81D4425CC00DE1DED /* UIButton+Extension.swift in Sources */,
+				EABC05C71D550FD800070582 /* NSDate+Extension.swift in Sources */,
 				EAFE21E51D44143000DE1DED /* TJAddViewController.swift in Sources */,
 				EA4752BB1D4D6890007201B5 /* TJWelcomeViewController.swift in Sources */,
 				EA274C091D4F9FAF00073276 /* TJStatus.swift in Sources */,
