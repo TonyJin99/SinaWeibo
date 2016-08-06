@@ -11,6 +11,15 @@ import SDWebImage
 
 class TJHomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var collectionViewWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var footerview: UIView!
+    
     @IBOutlet weak var verifiedImageView: UIImageView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var vipImageView: UIImageView!
@@ -43,9 +52,17 @@ class TJHomeTableViewCell: UITableViewCell {
             sourceLabel.text = viewModel!.source_Text
             contentLabel.text = viewModel?.status.text
             
-            print(viewModel?.status.user?.screen_name)
-            print(viewModel?.thumbnail_pic?.count)
-            print(calculateImageSize())
+            //更新配图，不然cell会重用
+            imageCollectionView.reloadData()
+            
+            //更新cell和collectionView尺寸
+            let (itemSize, clvSize) = calculateImageSize()
+            if itemSize != CGSizeZero{
+                flowLayout.itemSize = itemSize //更新cell尺寸
+            }
+            collectionViewHeight.constant = clvSize.height
+            collectionViewWidth.constant = clvSize.width
+
         }
     }
     
@@ -58,6 +75,14 @@ class TJHomeTableViewCell: UITableViewCell {
         contentLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
         
     }
+    
+    func calaulateRowHeight(viewmodel: TJStatusViewModel) -> CGFloat{
+        self.viewModel = viewmodel
+        self.layoutIfNeeded()
+        return CGRectGetMaxY(footerview.frame)
+    }
+    
+    
     
     //计算cell和collectionView的尺寸
     private func calculateImageSize() -> (CGSize, CGSize) {
@@ -89,10 +114,33 @@ class TJHomeTableViewCell: UITableViewCell {
         return(CGSize(width: imageWidth, height: imageHeight), CGSize(width: width, height: height))
         
     }
-
-
 }
 
+extension TJHomeTableViewCell: UICollectionViewDataSource{
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel?.thumbnail_pic?.count ?? 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("picture", forIndexPath: indexPath) as! homeImageCell
+        
+        cell.url = viewModel?.thumbnail_pic![indexPath.item]
+        return cell
+    }
+}
+
+class homeImageCell: UICollectionViewCell{
+    
+    @IBOutlet weak var homeImage: UIImageView!
+    
+    var url: NSURL?{
+        didSet{
+            homeImage.sd_setImageWithURL(url)
+        }
+    }
+    
+    
+}
 
 
 

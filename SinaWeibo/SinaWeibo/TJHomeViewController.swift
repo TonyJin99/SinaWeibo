@@ -40,7 +40,7 @@ class TJHomeViewController: TJBaseViewController {
         
         
         tableView.estimatedRowHeight = 400
-        tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
@@ -83,14 +83,14 @@ class TJHomeViewController: TJBaseViewController {
                 dispatch_group_enter(group)
                 
                 SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (image, error, _, _, _) in
-                    print("图片下载完成")
+                    //print("图片下载完成")
                     dispatch_group_leave(group)
                 })
             }
         }
 
         dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
-            print("全部下载完成")
+           // print("全部下载完成")
             self.statuses = viewModels
         }
     }
@@ -127,6 +127,8 @@ class TJHomeViewController: TJBaseViewController {
         let QRStoryBoard = UIStoryboard(name: "QRCode", bundle: nil).instantiateInitialViewController()
         presentViewController(QRStoryBoard!, animated: true, completion: nil)
     }
+    
+    private lazy var rowHeightCache = [String: CGFloat]()
 }
 
 
@@ -204,7 +206,32 @@ extension TJHomeViewController{
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+        let viewModel = statuses![indexPath.row]
+        
+        guard let height = rowHeightCache[viewModel.status.idstr ?? "-1"] else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("Home") as! TJHomeTableViewCell
+            let temp = cell.calaulateRowHeight(viewModel)
+            rowHeightCache[viewModel.status.idstr ?? "-1"] = temp
+            return temp
+        }
+        
+        return height
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        //释放缓存内存
+        rowHeightCache.removeAll()
+    }
 }
+
+
+
+
 
 
 
