@@ -16,6 +16,7 @@ class TJStatusViewModel: NSObject {
     var created_Time: String = ""
     var source_Text: String = ""
     var thumbnail_pic: [NSURL]? //保存所有配图URL
+    var forwardText: String? //转发微博的正文
     
     var status: TJStatus
     
@@ -54,7 +55,8 @@ class TJStatusViewModel: NSObject {
         }
 
         //处理配图URL
-        if let picurls = status.pic_urls{
+        if let picurls = (status.retweeted_status != nil) ? status.retweeted_status?.pic_urls : status.pic_urls
+        {
             thumbnail_pic = [NSURL]()
             for dict in picurls{
                 guard let urlStr = dict["thumbnail_pic"] as? String else{
@@ -65,6 +67,13 @@ class TJStatusViewModel: NSObject {
   
             }
         }
+        
+        //处理转发
+        if let text = status.retweeted_status?.text{
+            let name = status.retweeted_status?.user?.screen_name ?? ""
+            forwardText = "@" + name + ":" + text
+        }
+        
     }
 }
 

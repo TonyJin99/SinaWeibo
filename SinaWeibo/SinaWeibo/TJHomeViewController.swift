@@ -200,19 +200,22 @@ extension TJHomeViewController{
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Home", forIndexPath: indexPath) as! TJHomeTableViewCell
         
-        cell.viewModel = statuses![indexPath.row]
+        let viewModel = statuses![indexPath.row]
+        let identifier = (viewModel.status.retweeted_status != nil) ? "Forward" : "Home"
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TJHomeTableViewCell
         
+        cell.viewModel = viewModel
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
 
         let viewModel = statuses![indexPath.row]
-        
+        let identifier = (viewModel.status.retweeted_status != nil) ? "Forward" : "Home"
+
         guard let height = rowHeightCache[viewModel.status.idstr ?? "-1"] else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("Home") as! TJHomeTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier) as! TJHomeTableViewCell
             let temp = cell.calaulateRowHeight(viewModel)
             rowHeightCache[viewModel.status.idstr ?? "-1"] = temp
             return temp

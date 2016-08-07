@@ -28,6 +28,8 @@ class TJHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    @IBOutlet weak var forwardLabel: UILabel!
+    
     var viewModel: TJStatusViewModel?{
         didSet{
             
@@ -62,18 +64,23 @@ class TJHomeTableViewCell: UITableViewCell {
             }
             collectionViewHeight.constant = clvSize.height
             collectionViewWidth.constant = clvSize.width
+            
+            //转发微博
+            if let text = viewModel?.forwardText{
+                forwardLabel.text = text
+                forwardLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
+
+            }
+          
 
         }
     }
     
-
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        // 设置正文的最大宽度
         contentLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
-        
     }
     
     func calaulateRowHeight(viewmodel: TJStatusViewModel) -> CGFloat{

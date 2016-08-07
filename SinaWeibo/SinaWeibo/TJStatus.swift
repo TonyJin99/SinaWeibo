@@ -17,6 +17,7 @@ class TJStatus: NSObject{
     var source: String? //微博来源
     var user: TJUser? //微博作者的用户信息
     var pic_urls: [[String: AnyObject]]? //配图数组
+    var retweeted_status : TJStatus? //转发微博
     
     init(dict: [String: AnyObject]) {
         super.init()
@@ -27,6 +28,11 @@ class TJStatus: NSObject{
     override func setValue(value: AnyObject?, forKey key: String) {
         if key == "user"{
             user = TJUser(dict: value as! [String : AnyObject])
+            return
+        }
+        
+        if key == "retweeted_status"{
+            retweeted_status = TJStatus(dict: value as! [String : AnyObject])
             return
         }
         super.setValue(value, forKey: key)
