@@ -20,12 +20,13 @@ class NetworkTools: AFHTTPSessionManager {
         return instance
     }()
     
-    func loadStatus(finished: (Array:[[String: AnyObject]]?, error: NSError?)->()){
+    
+    func loadStatus(since_id: String, finished: (Array:[[String: AnyObject]]?, error: NSError?)->()){
         
         let url = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let paras = ["access_token": "2.00pFZdLC25bUWE6b1e1f2b940lv3Oc"]
+        let paras = ["access_token": "2.00pFZdLC25bUWE6b1e1f2b940lv3Oc", "since_id": since_id]
         GET(url, parameters: paras, progress: { (prpgress) in
-            print(prpgress)
+            //print(prpgress)
             }, success: { (task, object) in
                 //print(object!)
                 guard let array = (object as! [String: AnyObject])["statuses"] as? [[String: AnyObject]] else{
@@ -38,4 +39,39 @@ class NetworkTools: AFHTTPSessionManager {
                 finished(Array: nil, error: error)
         }
     }
+    
+    
+    func sendStatus(status: String, finished: (objc: AnyObject?, error: NSError?)->()){
+        
+        let url = "https://api.weibo.com/2/statuses/update.json"
+        let paras = ["access_token": "2.00pFZdLC25bUWE6b1e1f2b940lv3Oc", "status": status]
+        POST(url, parameters: paras, progress: { (progress) in
+            //print(progress)
+            }, success: { (task, object) in
+                finished(objc: object, error: nil)
+            }) { (task, error) in
+                finished(objc: nil, error: error)
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,12 +20,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_background" translatesAutoresizingMaskIntoConstraints="NO" id="c41-3J-AFK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-9v-X4o">
-                                <rect key="frame" x="124" y="438" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_big" translatesAutoresizingMaskIntoConstraints="NO" id="G4y-Lx-zlU">
                                 <rect key="frame" x="115" y="328" width="90" height="90"/>
                                 <constraints>
@@ -33,17 +27,23 @@
                                     <constraint firstAttribute="height" constant="90" id="VgA-0g-7sH"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎回来" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU4-9v-X4o">
+                                <rect key="frame" x="124" y="438" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="c41-3J-AFK" secondAttribute="trailing" id="7CF-4W-okY"/>
-                            <constraint firstItem="c41-3J-AFK" firstAttribute="top" secondItem="TbZ-Pd-YZE" secondAttribute="top" id="HAn-x4-nBd"/>
+                            <constraint firstItem="nMN-b3-JZ6" firstAttribute="top" secondItem="c41-3J-AFK" secondAttribute="bottom" id="DaN-Xn-Nmm"/>
                             <constraint firstItem="G4y-Lx-zlU" firstAttribute="centerX" secondItem="TbZ-Pd-YZE" secondAttribute="centerX" id="HlB-b2-YMU"/>
+                            <constraint firstItem="c41-3J-AFK" firstAttribute="top" secondItem="TbZ-Pd-YZE" secondAttribute="top" id="KAj-EQ-fWp"/>
                             <constraint firstItem="bU4-9v-X4o" firstAttribute="top" secondItem="G4y-Lx-zlU" secondAttribute="bottom" constant="20" id="MvS-X8-2Zj"/>
+                            <constraint firstItem="c41-3J-AFK" firstAttribute="leading" secondItem="TbZ-Pd-YZE" secondAttribute="leading" id="N7d-c5-KYw"/>
                             <constraint firstItem="nMN-b3-JZ6" firstAttribute="top" secondItem="G4y-Lx-zlU" secondAttribute="bottom" constant="150" id="UeF-uD-ehe"/>
                             <constraint firstItem="bU4-9v-X4o" firstAttribute="centerX" secondItem="G4y-Lx-zlU" secondAttribute="centerX" id="hrq-Nc-4gp"/>
-                            <constraint firstItem="nMN-b3-JZ6" firstAttribute="top" secondItem="c41-3J-AFK" secondAttribute="bottom" id="sFK-Sb-w87"/>
-                            <constraint firstItem="c41-3J-AFK" firstAttribute="leading" secondItem="TbZ-Pd-YZE" secondAttribute="leading" id="vfo-fn-bjd"/>
+                            <constraint firstAttribute="trailing" secondItem="c41-3J-AFK" secondAttribute="trailing" id="nhb-9A-7nQ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -58,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ad_background" width="750" height="1334"/>
+        <image name="ad_background" width="320" height="480"/>
         <image name="avatar_default_big" width="85" height="85"/>
     </resources>
 </document>

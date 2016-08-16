@@ -13,11 +13,7 @@ import SDWebImage
  
 class TJHomeViewController: TJBaseViewController {
     
-    var statuses: [TJStatusViewModel]?{
-        didSet{
-            tableView.reloadData()
-        }
-    }
+    var statuses: [TJStatusViewModel]?
     
     private var isPresent = false
 
@@ -41,6 +37,14 @@ class TJHomeViewController: TJBaseViewController {
         
         tableView.estimatedRowHeight = 400
         //tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        refreshControl = TJRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(loadingData), forControlEvents: UIControlEvents.ValueChanged)
+        
+        refreshControl?.beginRefreshing()
+        
+        navigationController?.navigationBar.insertSubview(tipTitle, atIndex: 0)
+
         
     }
     
@@ -53,21 +57,50 @@ class TJHomeViewController: TJBaseViewController {
     }
     
     func loadingData(){
-        NetworkTools.sharedInstance.loadStatus { (array, error) in
+        let since_id = statuses?.first?.status.idstr ?? "0"
+        
+        NetworkTools.sharedInstance.loadStatus(since_id) { (Array, error) in
             if error != nil{
                 SVProgressHUD.showErrorWithStatus("没有获取到数据")
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
             }
+            guard let array = Array else{
+                return
+            }
             //字典转模型
             var models = [TJStatusViewModel]()
-            for dict in array!{
+            for dict in array{
                 let status = TJStatus(dict: dict)
                 let viewModel = TJStatusViewModel(status: status)
                 models.append(viewModel)
             }
+            //处理微博更新数据
+            if since_id != "0" {
+                self.statuses = models + self.statuses!
+            }else{
+                self.statuses = models
+            }
             
             //缓存微博所有配图
             self.cachesImages(models)
+            self.refreshControl?.endRefreshing()
+            //显示刷新提醒
+            self.showRefreshCount(models.count)
+
+        }
+    }
+    
+    func showRefreshCount(count: Int){
+        tipTitle.text = (count == 0) ? "没有刷新到数据" : "刷新到\(count)条数据"
+        tipTitle.hidden = false
+        UIView.animateWithDuration(0.5, animations: {
+            self.tipTitle.transform = CGAffineTransformMakeTranslation(0, 44)
+            }) { (_) in
+                UIView.animateWithDuration(0.5, delay: 2.0, options: UIViewAnimationOptions(rawValue: 0), animations: {
+                    self.tipTitle.transform = CGAffineTransformIdentity
+                    }, completion: { (_) in
+                        self.tipTitle.hidden = true
+                })
         }
     }
     
@@ -83,15 +116,13 @@ class TJHomeViewController: TJBaseViewController {
                 dispatch_group_enter(group)
                 
                 SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (image, error, _, _, _) in
-                    //print("图片下载完成")
                     dispatch_group_leave(group)
                 })
             }
         }
 
         dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
-           // print("全部下载完成")
-            self.statuses = viewModels
+            self.tableView.reloadData()
         }
     }
     
@@ -106,7 +137,17 @@ class TJHomeViewController: TJBaseViewController {
         btn.addTarget(self, action: #selector(self.titleBtnClick), forControlEvents: UIControlEvents.TouchUpInside)
         btn.sizeToFit()
         return btn
-
+    }()
+    
+    private var tipTitle: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor.orangeColor()
+        label.textColor = UIColor.whiteColor()
+        label.font = UIFont.systemFontOfSize(14)
+        label.textAlignment = NSTextAlignment.Center
+        label.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 44)
+        label.hidden = true
+        return label
     }()
     
     func titleBtnClick(btn: TitleButton){

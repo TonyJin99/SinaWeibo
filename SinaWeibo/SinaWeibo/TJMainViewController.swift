@@ -63,7 +63,8 @@ class TJMainViewController: UITabBarController {
 
     
     @objc private func composeBtnClick(){
-        print("111")
+        let sb = UIStoryboard(name: "Compose", bundle: nil).instantiateInitialViewController()
+        presentViewController(sb!, animated: true, completion: nil)
     }
 
 }

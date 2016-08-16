@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="opb-ok-HMl">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Compose View Controller-->
+        <scene sceneID="hKj-Jw-SQr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VYh-4X-akQ" customClass="TJComposeViewController" customModule="SinaWeibo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I1X-Nr-ac6"/>
+                        <viewControllerLayoutGuide type="bottom" id="pmf-zl-jQp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WM6-34-xzV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CQE-bA-In8" customClass="TJTextView" customModule="SinaWeibo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VYh-4X-akQ" id="zdH-Cc-aYx"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CQE-bA-In8" secondAttribute="trailing" id="Cla-Ob-ghj"/>
+                            <constraint firstItem="CQE-bA-In8" firstAttribute="top" secondItem="I1X-Nr-ac6" secondAttribute="bottom" id="Hx4-n2-vQo"/>
+                            <constraint firstItem="CQE-bA-In8" firstAttribute="leading" secondItem="WM6-34-xzV" secondAttribute="leading" id="eAE-xc-lC7"/>
+                            <constraint firstItem="pmf-zl-jQp" firstAttribute="top" secondItem="CQE-bA-In8" secondAttribute="bottom" id="jf7-uE-Gwt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gNA-KN-AzG">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="krR-3Z-2Sf">
+                            <connections>
+                                <action selector="itemActionClose:" destination="VYh-4X-akQ" id="akB-l4-DCg"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="cLl-4N-Frf" customClass="TJTitleView" customModule="SinaWeibo" customModuleProvider="target">
+                            <rect key="frame" x="96" y="5.5" width="128" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="发送" id="Kpb-OK-AgT">
+                            <connections>
+                                <action selector="itemActionSend:" destination="VYh-4X-akQ" id="U3P-fl-hwy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customTextView" destination="CQE-bA-In8" id="OV9-ue-cOb"/>
+                        <outlet property="sendItem" destination="Kpb-OK-AgT" id="aZl-Tg-rYE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XIZ-Py-wYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="343"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G6h-PM-w8j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="opb-ok-HMl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g4l-9e-W4D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VYh-4X-akQ" kind="relationship" relationship="rootViewController" id="vJx-nI-uch"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDN-JY-4Ox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="343"/>
+        </scene>
+    </scenes>
+</document>
