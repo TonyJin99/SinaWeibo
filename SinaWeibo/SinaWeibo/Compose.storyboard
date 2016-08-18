@@ -26,6 +26,29 @@
                                     <outlet property="delegate" destination="VYh-4X-akQ" id="zdH-Cc-aYx"/>
                                 </connections>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8C-1y-8ab">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="amV-CE-u9f"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tLb-Es-aKq"/>
+                                    <barButtonItem image="compose_toolbar_picture" id="whV-HD-1p3"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="r46-da-dzd"/>
+                                    <barButtonItem image="compose_mentionbutton_background" id="6Gc-u8-Qmh"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sNR-Ye-cxM"/>
+                                    <barButtonItem image="compose_trendbutton_background" id="9Ky-pe-cqi"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="M9I-dS-uYD"/>
+                                    <barButtonItem image="compose_emoticonbutton_background" id="ma8-Uh-4YA">
+                                        <connections>
+                                            <action selector="itemActionEmotion:" destination="VYh-4X-akQ" id="015-6v-oTg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WSD-5D-hPd"/>
+                                    <barButtonItem image="compose_addbutton_background" id="Req-Ik-9V2"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XKc-oQ-7WS"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -33,6 +56,9 @@
                             <constraint firstItem="CQE-bA-In8" firstAttribute="top" secondItem="I1X-Nr-ac6" secondAttribute="bottom" id="Hx4-n2-vQo"/>
                             <constraint firstItem="CQE-bA-In8" firstAttribute="leading" secondItem="WM6-34-xzV" secondAttribute="leading" id="eAE-xc-lC7"/>
                             <constraint firstItem="pmf-zl-jQp" firstAttribute="top" secondItem="CQE-bA-In8" secondAttribute="bottom" id="jf7-uE-Gwt"/>
+                            <constraint firstItem="k8C-1y-8ab" firstAttribute="leading" secondItem="WM6-34-xzV" secondAttribute="leading" id="nrB-d5-bmn"/>
+                            <constraint firstItem="pmf-zl-jQp" firstAttribute="top" secondItem="k8C-1y-8ab" secondAttribute="bottom" id="sSH-3G-c2G"/>
+                            <constraint firstAttribute="trailing" secondItem="k8C-1y-8ab" secondAttribute="trailing" id="zdH-Ys-kSz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gNA-KN-AzG">
@@ -56,6 +82,7 @@
                     <connections>
                         <outlet property="customTextView" destination="CQE-bA-In8" id="OV9-ue-cOb"/>
                         <outlet property="sendItem" destination="Kpb-OK-AgT" id="aZl-Tg-rYE"/>
+                        <outlet property="toolbarbottom" destination="sSH-3G-c2G" id="vk7-qj-J0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIZ-Py-wYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,4 +108,11 @@
             <point key="canvasLocation" x="185" y="343"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compose_addbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+    </resources>
 </document>

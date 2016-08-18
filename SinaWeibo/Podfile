@@ -1,5 +1,7 @@
-platform :ios, '8.0' 
+platform :ios, '8.0'
 use_frameworks!
+
+target "SinaWeibo" do
 
 pod 'QorumLogs'
 pod 'AFNetworking'
@@ -7,3 +9,5 @@ pod 'SVProgressHUD'
 pod 'SDWebImage'
 pod 'SnapKit'
 pod 'R.swift'
+
+end

@@ -13,14 +13,38 @@ class TJComposeViewController: UIViewController {
 
     @IBOutlet weak var sendItem: UIBarButtonItem!
     @IBOutlet weak var customTextView: TJTextView!
+    @IBOutlet weak var toolbarbottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIKeyboardWillChangeFrame), name: UIKeyboardWillChangeFrameNotification, object: nil)
 
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    func UIKeyboardWillChangeFrame(notice: NSNotification){
+        //获取键盘的frame
+        let rect = notice.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue
+        let height = UIScreen.mainScreen().bounds.height
+        
+        let offSetY = height - rect!.origin.y
+        
+        // 4.修改底部工具条约束
+        toolbarbottom.constant = offSetY
+        UIView.animateWithDuration(0.25) { () -> Void in
+            self.view.layoutIfNeeded()
+        }
+
+    }
+    
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         customTextView.becomeFirstResponder()
     }
     
@@ -52,12 +76,34 @@ class TJComposeViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func itemActionEmotion(sender: AnyObject) {
+        // 注意点: 要想切换切换, 必须先关闭键盘, 切换之后再打开
+        customTextView.resignFirstResponder()
+        
+        if customTextView.inputView != nil{
+            customTextView.inputView = nil
+        }else{
+            customTextView.inputView = UISwitch()
+        }
+        
+        customTextView.becomeFirstResponder()
+
+        
+    }
+    
 }
+
+
 
 
 extension TJComposeViewController: UITextViewDelegate{
     
     func textViewDidChange(textView: UITextView) {
         sendItem.enabled = textView.hasText()
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        customTextView.resignFirstResponder()
     }
 }
