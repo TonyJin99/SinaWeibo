@@ -12,14 +12,10 @@ import SDWebImage
 class TJHomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var collectionViewWidth: NSLayoutConstraint!
-    
     @IBOutlet weak var footerview: UIView!
-    
     @IBOutlet weak var verifiedImageView: UIImageView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var vipImageView: UIImageView!
@@ -27,7 +23,6 @@ class TJHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
-    
     @IBOutlet weak var forwardLabel: UILabel!
     
     var viewModel: TJStatusViewModel?{
@@ -40,7 +35,6 @@ class TJHomeTableViewCell: UITableViewCell {
             verifiedImageView.image = viewModel!.verified_image
             
             nameLabel.text = viewModel!.status.user?.screen_name
-            
 
             if let image = viewModel!.mbrankImage{
                 vipImageView.image = image
@@ -71,8 +65,6 @@ class TJHomeTableViewCell: UITableViewCell {
                 forwardLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
 
             }
-          
-
         }
     }
     
@@ -82,14 +74,13 @@ class TJHomeTableViewCell: UITableViewCell {
         // 设置正文的最大宽度
         contentLabel.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 2 * 10
     }
+     
     
     func calaulateRowHeight(viewmodel: TJStatusViewModel) -> CGFloat{
         self.viewModel = viewmodel
         self.layoutIfNeeded()
         return CGRectGetMaxY(footerview.frame)
     }
-    
-    
     
     //计算cell和collectionView的尺寸
     private func calculateImageSize() -> (CGSize, CGSize) {
@@ -121,7 +112,9 @@ class TJHomeTableViewCell: UITableViewCell {
         return(CGSize(width: imageWidth, height: imageHeight), CGSize(width: width, height: height))
         
     }
+    
 }
+
 
 extension TJHomeTableViewCell: UICollectionViewDataSource{
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

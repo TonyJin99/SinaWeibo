@@ -15,8 +15,8 @@ extension NSDate{
         formatter.dateFormat = formatterStr
         formatter.locale = NSLocale(localeIdentifier: "en") //如果不写，真机中可能无法转换
         return formatter.dateFromString(timeStr)!
-
     }
+    
     
     func descriptionStr() -> String {
         //"Tue Aug 02 22:50:31 +0800 2016"
@@ -52,6 +52,7 @@ extension NSDate{
                 formatterString = "MM-dd" + formatterString
             }
         }
+        
         formatter.dateFormat = formatterString
         return formatter.stringFromDate(self)
     }

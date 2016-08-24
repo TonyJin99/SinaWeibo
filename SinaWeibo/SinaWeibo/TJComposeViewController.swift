@@ -19,6 +19,8 @@ class TJComposeViewController: UIViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UIKeyboardWillChangeFrame), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        
+        
 
     }
     
@@ -34,7 +36,6 @@ class TJComposeViewController: UIViewController {
         UIView.animateWithDuration(0.25) { () -> Void in
             self.view.layoutIfNeeded()
         }
-
     }
     
     

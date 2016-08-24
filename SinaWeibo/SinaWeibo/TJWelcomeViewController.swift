@@ -30,6 +30,7 @@ class TJWelcomeViewController: UIViewController {
         guard let url = NSURL(string: TJUserAccount.loadUserAccount()!.avatar_large!) else{
             return
         }
+       
         iconImage.sd_setImageWithURL(url)
         
         UIView.animateWithDuration(2.0, animations: { () -> Void in

@@ -24,6 +24,7 @@ class TJHomeViewController: TJBaseViewController {
             vistorView?.setupVistorInfo(nil, title: "关注一些人，回这里看看有什么惊喜")
             return
         }
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendsearch", target: self, action: #selector(self.buttonActionLeftBtn))
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop", target: self, action: #selector(self.buttonActionRightBtn))
 
@@ -56,10 +57,16 @@ class TJHomeViewController: TJBaseViewController {
          titleButton.selected = !titleButton.selected
     }
     
+    
     func loadingData(){
-        let since_id = statuses?.first?.status.idstr ?? "0"
+        var since_id = statuses?.first?.status.idstr ?? "0"
+        var max_id = "0"
+        if lastStatus{
+            since_id = "0"
+            max_id = statuses?.last?.status.idstr ?? "0"
+        }
         
-        NetworkTools.sharedInstance.loadStatus(since_id) { (Array, error) in
+        NetworkTools.sharedInstance.loadStatus(since_id, max_id: max_id) { (Array, error) in
             if error != nil{
                 SVProgressHUD.showErrorWithStatus("没有获取到数据")
                 SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.Black)
@@ -77,7 +84,10 @@ class TJHomeViewController: TJBaseViewController {
             //处理微博更新数据
             if since_id != "0" {
                 self.statuses = models + self.statuses!
-            }else{
+            }else if max_id != "0" {
+                self.statuses = self.statuses! + models
+            }
+            else{
                 self.statuses = models
             }
             
@@ -139,6 +149,7 @@ class TJHomeViewController: TJBaseViewController {
         return btn
     }()
     
+    //刷新提醒视图
     private var tipTitle: UILabel = {
         let label = UILabel()
         label.backgroundColor = UIColor.orangeColor()
@@ -170,6 +181,7 @@ class TJHomeViewController: TJBaseViewController {
     }
     
     private lazy var rowHeightCache = [String: CGFloat]()
+    private var lastStatus = false //最后一条微博标记
 }
 
 
@@ -247,6 +259,13 @@ extension TJHomeViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! TJHomeTableViewCell
         
         cell.viewModel = viewModel
+        
+        if indexPath.row == (statuses?.count)! - 1{
+            //print("last weibo")
+            lastStatus = true
+            loadingData()
+        }
+        
         return cell
     }
     
@@ -272,34 +291,6 @@ extension TJHomeViewController{
         rowHeightCache.removeAll()
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

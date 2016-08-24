@@ -12,7 +12,7 @@ import SnapKit
 class TJNewFeatureViewController: UIViewController {
     
     var count = 4
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -98,6 +98,7 @@ class TJNewFeatureCell: UICollectionViewCell{
     
     
     func startAnimation(){
+        
         startButton.transform = CGAffineTransformMakeScale(0.0, 0.0)
         startButton.userInteractionEnabled = false
         UIView.animateWithDuration(2.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
